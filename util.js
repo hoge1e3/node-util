@@ -106,7 +106,7 @@ exports.deprecate = function(fn, msg) {
 var debugs = {};
 var debugEnvRegex = /^$/;
 
-if (process.env.NODE_DEBUG) {
+if (typeof process !== 'undefined' && process.env.NODE_DEBUG) {
   var debugEnv = process.env.NODE_DEBUG;
   debugEnv = debugEnv.replace(/[|\\{}()[\]^$+?.]/g, '\\$&')
     .replace(/\*/g, '.*')
@@ -118,7 +118,7 @@ exports.debuglog = function(set) {
   set = set.toUpperCase();
   if (!debugs[set]) {
     if (debugEnvRegex.test(set)) {
-      var pid = process.pid;
+      var pid = typeof process !== 'undefined' ? process.pid : 0;
       debugs[set] = function() {
         var msg = exports.format.apply(exports, arguments);
         console.error('%s %d: %s', set, pid, msg);

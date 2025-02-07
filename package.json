@@ -1,11 +1,11 @@
 {
-  "name": "util",
-  "description": "Node.js's util module for all engines",
+  "name": "@hoge1e3/util",
+  "description": "Node.js's util module for all engines(solving undefined process issue from orignal Joyent version)",
   "version": "0.12.5",
   "author": {
-    "name": "Joyent",
-    "url": "http://www.joyent.com"
+    "name": "hoge1e3"
   },
+  "types":"./util.d.ts",
   "browser": {
     "./support/isBuffer.js": "./support/isBufferBrowser.js"
   },
@@ -27,6 +27,7 @@
     "tape": "~4.9.0"
   },
   "files": [
+    "util.d.ts",
     "util.js",
     "support"
   ],
