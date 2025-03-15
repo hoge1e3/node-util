@@ -1,7 +1,7 @@
 {
   "name": "@hoge1e3/util",
   "description": "Node.js's util module for all engines(solving undefined process issue from orignal Joyent version)",
-  "version": "0.12.5",
+  "version": "0.12.6",
   "author": {
     "name": "hoge1e3"
   },
